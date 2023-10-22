@@ -1,7 +1,5 @@
 # ABC technologies
 
-
-
 # CICD_Pipeline_IndustryGrade_project1
 ABC technologies is a leading online retail store. ABC has recently acquired a large retails offline
 business store. The business store has large number of stores across the globe but is following
