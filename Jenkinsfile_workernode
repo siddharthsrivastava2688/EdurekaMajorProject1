@@ -1,9 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        label 'maven-build-worker1' // Specify the label for the slave node
+    }
     stages {
         stage('Compile Source Code') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn compile'  
             }
         }
         stage('Test Source Code') {
@@ -13,8 +15,9 @@ pipeline {
         }
         stage('Package Code') {
             steps {
-                sh 'mvn package'
+                sh 'mvn package' 
             }
         }
     }
 }
+
