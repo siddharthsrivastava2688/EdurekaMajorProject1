@@ -1,12 +1,6 @@
 pipeline {
-    agent {
-        label 'maven-build-worker1' // Specify the label for the worker node
-    }
     stages {
         stage('ansible playbook for k8 Deployment') {
-            agent {
-                label 'maven-build-master' // Specify the label for the master node
-            }
             steps {
                 script {
                     ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
