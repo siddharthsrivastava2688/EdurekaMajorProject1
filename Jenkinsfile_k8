@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'maven-build-master' // Specify the label for the slave node
+        label 'maven-build-worker1' // Specify the label for the slave node
     }
     stages {
         stage('Compile Source Code') {
