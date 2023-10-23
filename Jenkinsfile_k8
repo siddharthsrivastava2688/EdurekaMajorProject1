@@ -42,7 +42,7 @@ pipeline {
             }
             steps {
                 script {
-                    ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
+                    ansiblePlaybook , installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
                 }
             }
         }
