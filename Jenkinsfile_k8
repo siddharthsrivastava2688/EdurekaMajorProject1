@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Login to Docker Hub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']) {
                     sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
                 }
             }
@@ -38,12 +38,12 @@ pipeline {
         }
         stage('ansible playbook for k8 Deployment') {
             steps {
-               script {
+                script {
                     // Update the PATH to include the directory with ansible-playbook
                     env.PATH = "/root/task4/n:${env.PATH}"
-                    sh  'ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
+                    sh 'ansible-playbook -i hosts -b -u root ansible.yaml'
+                }
             }
         }
     }
 }
-
