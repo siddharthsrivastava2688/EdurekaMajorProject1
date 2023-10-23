@@ -1,5 +1,5 @@
 pipeline {
-    agent {
+    \*agent {
         label 'maven-build-worker1' // Specify the label for the worker node
     }
     stages {
@@ -35,7 +35,7 @@ pipeline {
                 sh 'docker tag my_customapp:1.0 siddharthsrivastava2688/cicd_pipeline:my_customapp-1.0'
                 sh 'docker push siddharthsrivastava2688/cicd_pipeline:my_customapp-1.0'
             }
-        }
+        } */
         stage('ansible playbook for k8 Deployment') {
             agent {
                 label 'maven-build-master' // Specify the label for the master node
