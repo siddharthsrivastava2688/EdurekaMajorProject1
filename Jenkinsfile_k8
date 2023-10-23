@@ -43,7 +43,9 @@ pipeline {
             label 'maven-build-master' // Specify the label for the master node
         }
         steps {
-            ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: '/root/task4/ansible.yaml'
+            script {
+                ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: '/root/task4/ansible.yaml'
+            }
         }
     }
 }
