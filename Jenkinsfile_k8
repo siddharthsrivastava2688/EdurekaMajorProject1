@@ -38,7 +38,7 @@ pipeline {
         }
     }
 
-    stage('ansible playbook for k8 Deployment') {
+        stage('ansible playbook for k8 Deployment') {
         agent {
             label 'maven-build-master' // Specify the label for the master node
         }
