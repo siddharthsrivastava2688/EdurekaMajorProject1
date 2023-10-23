@@ -1,4 +1,6 @@
 pipeline {
+    agent any // Let Jenkins choose an available agent
+
     stages {
         stage('ansible playbook for k8 Deployment') {
             steps {
