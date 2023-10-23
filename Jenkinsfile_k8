@@ -37,13 +37,12 @@ pipeline {
             }
         }
     }
-
         stage('ansible playbook for k8 Deployment') {
-        agent {
+          agent {
             label 'maven-build-master' // Specify the label for the master node
         }
-        steps {
-            script {
+            steps {
+              script {
                 ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: '/root/task4/ansible.yaml'
             }
         }
