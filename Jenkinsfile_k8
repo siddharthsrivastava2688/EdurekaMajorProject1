@@ -42,7 +42,7 @@ pipeline {
             steps {
                 script {
                     // Update the PATH to include the directory with ansible-playbook
-                    env.PATH = "/root/task4/n:${env.PATH}"
+                    env.PATH = "/usr/bin//n:${/root/task4}"
                     sh 'ansible-playbook -i hosts -b -u root ansible.yaml'
                 }
             }
