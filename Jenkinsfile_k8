@@ -36,11 +36,6 @@ pipeline {
                 sh 'docker push siddharthsrivastava2688/cicd_pipeline:my_customapp-1.0'
             }
         }
-        stage('Deploy to Container') {
-            steps {
-                sh 'docker run -d -p 8085:8080 my_customapp:1.0'
-            }
-        }
         stage('ansible playbook for k8 Deployment') {
             steps {
                 ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
