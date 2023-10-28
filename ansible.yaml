@@ -1,6 +1,6 @@
 - hosts: localhost
   become: yes
-  conection: local
+  connection: local
   tasks:
   - name: copy deployment file to kubernetes master 
     copy:
