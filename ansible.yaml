@@ -1,6 +1,5 @@
-- hosts: localhost
+- hosts: ansible-host
   become: yes
-  connection: local
   tasks:
   - name: copy deployment file to kubernetes master 
     copy:
