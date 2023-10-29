@@ -55,3 +55,4 @@ in git hub
 4. Integrate docker with Ansible and write playbook
 5. Deploy artifacts to Kubernetes cluster
 6. Monitor resources using grafana
+
